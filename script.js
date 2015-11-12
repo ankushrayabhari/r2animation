@@ -100,6 +100,7 @@ R2Animation.prototype.drawAllPoints = function() {
 
 R2Animation.prototype.addPoint = function(a) {
     this.pointList.push(a);
+    this.scatterPlot();
     this.drawPoint(a.map());
     this.drawPointBoxes();
     if(this.disabled) {
@@ -122,6 +123,9 @@ R2Animation.prototype.removePoint = function(i) {
     ul.removeChild(ul.childNodes[i]);
     this.drawPointBoxes();
     this.scatterPlot();
+    if(this.pointList.length == 0) {
+        this.setButtonDisable(true);
+    }
 }
 
 R2Animation.prototype.updatePoint = function(i) {
@@ -319,7 +323,7 @@ R2Animation.prototype.histogram = function(residual) {
     console.log(binNumber);
     var bins = [];
    	for(var i = 0; i<binNumber+1; i++) {
-    	bins[i] = Math.floor(valueList[0] + i*binWidth);
+    	bins[i] = valueList[0] + i*binWidth;
     }
         console.log(bins);
     
