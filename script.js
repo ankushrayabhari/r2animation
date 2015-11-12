@@ -331,7 +331,7 @@ R2Animation.prototype.histogram = function(residual) {
     
     for(var i = 0; i<valueList.length; i++) {
         for(var j = 0; j<bins.length-1; j++) {
-            if((valueList[i] > bins[j]) && (valueList[i] <= bins[j+1])) {
+            if((valueList[i] >= bins[j]) && (valueList[i] < bins[j+1])) {
                 if(count[j] === undefined) {
                     count[j] = 1;
                 }
