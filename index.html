@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<title>R2 Animation</title>
+		<style>
+			body {
+			    -webkit-touch-callout: none;
+			    -webkit-user-select: none;
+			    -khtml-user-select: none;
+			    -moz-user-select: none;
+			    -ms-user-select: none;
+			    user-select: none;
+			}
+			canvas {
+			    border: 1px solid black;
+			}
+			ul {
+			    list-style-type: none;
+			}
+			#pointList {
+			    text-align: center;
+			    width: 350px;
+			    vertical-align: top;
+			    display: inline-block;
+			}
+			#container {
+			    display: inline-block;
+			}
+			button {
+			    margin: 2.5px;
+			    padding: 3px;
+			}
+		</style>
+	</head>
+	<script src="script.js"></script>
+	<div id="container">
+	    <canvas id="r2anim" width="800" height="800"></canvas>
+	    <div>
+	        Bin Width: 1 <input type="range" id="binNumber" min="1" max="5" value="1"> 5
+	        </div>
+	    <div id="buttons">
+	        <button onclick="r2anim.scatterPlot();">Scatterplot</button>
+	        <button onclick="r2anim.residualLine();">Line Of Best Fit</button>
+	        <button onclick="r2anim.residualPlot();">Residual Plot</button><br>
+	        <button onclick="r2anim.histogram(false);">Histogram</button>
+	        <button onclick="r2anim.histogram(true);">Residual Histogram</button>
+	        <button onclick="r2anim.histogramComparison();">Comparison</button><br>
+	        <button onclick="r2anim.animate();">Animate</button>
+	        <button onclick="r2anim.reset();">Reset</button>
+	        <button onclick="r2anim.addDefaultLine();">Add Sample Line</button> 
+	    </div>
+	</div>
+	<div id="pointList">
+	    <button onclick="r2anim.addPoint(new Point(0,0));">Add Empty Point</button>
+	    <br>
+	    <ul id="points"></ul>
+	</div>
+</html>
