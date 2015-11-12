@@ -323,10 +323,16 @@ R2Animation.prototype.histogram = function(residual) {
     console.log(binWidth);
     console.log(binNumber);
     var bins = [];
-   	for(var i = 0; i<binNumber+1; i++) {
-    	bins[i] = valueList[0] + i*binWidth;
+    if(binNumber == 1) {
+        bins[0] = valueList[0] - 0.5*binWidth;
+        bins[1] = valueList[0] + 0.5*binWidth;
     }
-        console.log(bins);
+    else {
+        for(var i = 0; i<binNumber+1; i++) {
+            bins[i] = valueList[0] + i*binWidth;
+        }
+    }
+    console.log(bins);
     
     var count = [];
     
