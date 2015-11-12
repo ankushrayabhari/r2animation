@@ -319,6 +319,7 @@ R2Animation.prototype.histogram = function(residual) {
    
     var binWidth = parseInt(document.getElementById("binNumber").value);
     var binNumber = Math.ceil((valueList[valueList.length-1] - valueList[0])/binWidth);
+    if(binNumber == 0) binNumber = 1;
     console.log(binWidth);
     console.log(binNumber);
     var bins = [];
