@@ -82,7 +82,6 @@ R2Animation.prototype.addDefaultLine = function() {
     for(var i = 1; i<40; i++) {
         this.addPoint(new Point(i,i));
     }
-    this.addPoint(new Point(2,1));
 }
 
 R2Animation.prototype.drawPoint = function(a) {
